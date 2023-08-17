@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class CourrierRecu extends Model
 {
     use HasFactory;
-    protected $fillable = ['type_courr' ,'titre','objet' ,'source','destination', 'date','etat'];
+    protected $fillable = ['type_courr' ,'titre','objet' ,'source','destination', 'date','etat', 'id_piece', 'id_service'];
     protected $table = 'courrier_recus';
 
-    public  function piece(){
+    public  function pieceJointe(){
         return $this->belongsTo(PieceJointe::class, 'id_piece');
     }
 
